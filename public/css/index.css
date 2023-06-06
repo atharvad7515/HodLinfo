@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
 
 html {
-    background-color: #000000;
+    background-color: #191d28;
+}
+
+h5 {
+    color: #2e3241;
 }
 
 /* Navbar styles */
 .navbar-cust {
-    background-color: #000000;
+    background-color: #191d28;
     overflow: hidden;
     top: 0;
     width: 100%;
@@ -168,25 +172,41 @@ html {
 
 /* Table styles */
 
-.component {
-    font-family: Arial, sans-serif;
+.table-alter {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 1em;
+    margin: 0;
+    color: #212529;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+    display: table;
+    border-color: gray;
+    background-color: #191d28;
 }
 
-th,
-td {
+.text-center {
+    text-align: center !important;
+    font-size: 2rem;
+}
+
+thead tr th {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    color: #818389;
+    background-color: #191d28;
+}
+
+tr td {
+    padding: 8px;
+    text-align: left;
     color: #ffffff;
 }
 
-th {
-    background-color: #f2f2f2;
+tbody tr {
+    background-color: #2e3241;
 }
 
 .negative {
