@@ -78,6 +78,10 @@ h5 {
     padding: 15px;
 }
 
+.theme-toggle-align {
+    padding-left: 130px;
+}
+
 .navbar-progress {
     display: inline-block;
     width: 20px;
@@ -215,4 +219,48 @@ tbody tr {
 
 .positive {
     color: green;
+}
+
+.details-container {
+    padding: 30px;
+    background-color: #191d28;
+}
+
+.small-header {
+    padding: 10px 0px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.center-div {
+    font-size: 2em;
+}
+
+.small-header-percentage {
+    color: green;
+}
+
+.small-header-time {
+    /* Add your styles for the time here */
+    color: #65686f;
+    font-size: 1.3rem;
+}
+
+.center-block {
+    max-width: 40%;
+}
+
+.center-text {
+    /* Add your styles for the subtext here */
+    color: #65686f;
+    font-size: 1.6rem;
+}
+
+.amount {
+    padding: 10px;
+    color: #ffffff;
+    font-size: 6rem;
+
 }
