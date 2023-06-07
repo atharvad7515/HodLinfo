@@ -80,8 +80,8 @@
                 <div class="center-text">
                     <span class="subText-heading">Best Price to Trade</span>
                 </div>
-                <div class="amount">₹ 24,94,136</div>
-                <div class="center-text">Average <%= name%> net price including commission</div>
+                <div class="amount">₹ <%= (data[0].high + data[0].low)/ 2%></div>
+                <div class="center-text">Average <%= data[0].name%> net price including commission</div>
             </div>
             <div class="text-center">
                 <div class="small-header-percentage">5.51 %</div>
@@ -99,54 +99,42 @@
     <table class="table-alter">
         <thead>
             <tr>
-                <th scope="col" class="text-center">#</th>
-                <th scope="col" class="text-center">Platform</th>
+                <th scope="col" class="text-center">Base Unit</th>
+                <th scope="col" class="text-center">Name</th>
                 <th scope="col" class="text-center">Last Traded Price</th>
-                <th scope="col" class="text-center">Buy / Sell Price</th>
-                <th scope="col" class="text-center">Difference</th>
-                <th scope="col" class="text-center">Savings</th>
+                <th scope="col" class="text-center">
+                    <sup>Buy</sup><br>
+                    <sub>Sell Price</sub>
+                </th>
+                <th scope="col" class="text-center">Volume</th>
+                <th scope="col" class="text-center">Open</th>
+                <th scope="col" class="text-center">
+                    <sup>High</sup><br>
+                    <sub>Low</sub>
+                </th>
+                <th scope="col" class="text-center">Trade Time</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="text-center">1</td>
-                <td class="text-center">WazirX</td>
-                <td class="text-center">₹ 23,25,000</td>
-                <td class="text-center">₹ 22,82,135 / ₹ 23,25,000</td>
-                <td class="negative text-center">-5.29 %</td>
-                <td class="negative text-center">▼ ₹ 1,29,957</td>
-            </tr>
-            <tr>
-                <td class="text-center">2</td>
-                <td class="text-center">Bitbns</td>
-                <td class="text-center">₹ 27,54,632</td>
-                <td class="text-center">₹ 27,39,447 / ₹ 27,54,632</td>
-                <td class="positive text-center">12.21 %</td>
-                <td class="positive text-center">▲ ₹ 2,99,674</td>
-            </tr>
-            <tr>
-                <td class="text-center">3</td>
-                <td class="text-center">Colodax</td>
-                <td class="text-center">₹ 25,47,315</td>
-                <td class="text-center">₹ 22,63,015 / ₹ 25,47,315</td>
-                <td class="positive text-center">3.76 %</td>
-                <td class="positive text-center">▲ ₹ 92,357</td>
-            </tr>
-            <tr>
-                <td class="text-center">4</td>
-                <td class="text-center">Zebpay</td>
-                <td class="text-center">₹ 23,10,000</td>
-                <td class="text-center">₹ 23,28,000 / ₹ 23,15,000</td>
-                <td class="negative text-center">-5.90 %</td>
-                <td class="negative text-center">▼ ₹ 1,44,957</td>
-            </tr>
-            <tr>
-                <td class="text-center">5</td>
-                <td class="text-center">CoinDCX</td>
-                <td class="text-center">₹ 23,37,842</td>
-                <td class="text-center">₹ 23,34,300 / ₹ 23,37,842</td>
-                <td class="negative text-center">-4.77 %</td>
-                <td class="negative text-center">▼ ₹ 1,17,115</td>
+                <% data.forEach(function(doc) { %>
+                    <tr>
+                      <td class="text-center"><%= doc.baseUnit %></td>
+                      <td class="text-center"><%= doc.name %></td>
+                      <td class="text-center">₹ <%= doc.last %></td>
+                      <td class="text-center">
+                        <sup class="positive">₹ <%= doc.buy %></sup><br>
+                        <sub class="negative">₹ <%= doc.sell %></sub>
+                    </td>
+                      <td class="text-center"><%= doc.volume %></td>
+                      <td class="text-center"><%= doc.open %></td>
+                      <td class="text-center"> 
+                        <sup class="positive">₹ <%= doc.high %></sup><br>
+                        <sub class="negative">₹ <%= doc.low %></sub>
+                      </td>
+                      <td class="text-center"><%= doc.tradeTime %></td>
+                    </tr>
+                  <% }); %>
             </tr>
         </tbody>
     </table>

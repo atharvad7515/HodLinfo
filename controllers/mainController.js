@@ -16,15 +16,43 @@ const home_page = async (req, res) => {
         // store the data in DB collection
         await CryptoData.insertMany(cryptoDataArray)
 
-        // retrive the first data (BTC Data) to home page
-        const firstData = await CryptoData.findOne()
+        // process the data
 
-        // send the first data
-        res.render('index',firstData)
-    } catch (err) {
-        console.log(err.message)
-        res.status(500).send('Internal error fetching and storing data')
+        const storedData = await CryptoData.find().limit(8)
+
+        const processedData = []
+
+        storedData.forEach((data) => {
+            var { base_unit, name, buy, sell, volume, open, low, high, last } = data;
+
+            const timestamp = new Date(data.at * 1000)
+            const tradeTime = timestamp.toLocaleString()
+            base_unit = base_unit.toUpperCase()
+            // Create an object containing the processed data for each base unit
+            const processedDoc = {
+                baseUnit: base_unit,
+                name: name,
+                buy: buy,
+                sell: sell,
+                volume: volume,
+                open: open,
+                low: low,
+                high: high,
+                last: last,
+                tradeTime: tradeTime,
+            }
+
+            processedData.push(processedDoc)
+        })
+
+            CryptoData.deleteMany({})
+
+            // send the first data
+            res.render('index',{data:processedData})
+        } catch (err) {
+            console.log(err.message)
+            res.status(500).send('Internal error fetching and storing data')
+        }
     }
-}
 
 module.exports = { home_page }
