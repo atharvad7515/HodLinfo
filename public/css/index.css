@@ -20,14 +20,14 @@ h5 {
     float: left;
     width: 40%;
     padding: 15px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     text-decoration: none;
     color: #6ccacb;
 }
 
 .site-name {
-    font-size: 5rem;
+    font-size: 4rem;
     padding: 10px;
     font-family: 'Roboto Mono', monospace;
 }
@@ -45,7 +45,7 @@ h5 {
     font-family: 'Roboto Mono', monospace;
     display: inline-block;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 16px;
     background: #2e3241;
     padding: 10px 20px 10px 20px;
     margin-right: 20px;
@@ -65,10 +65,10 @@ h5 {
     font-family: 'Roboto Mono', monospace;
     display: inline-block;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 1rem;
     background: #3dc6c1;
-    padding: 10px 20px 10px 20px;
-    margin-right: 20px;
+    padding: 10px;
+    margin-right: 10px;
     text-decoration: none;
     cursor: pointer;
 }
@@ -183,6 +183,7 @@ h5 {
     border-spacing: 0 1em;
     margin: 0;
     color: #212529;
+    padding-bottom: 20px;
 }
 
 table {
@@ -193,7 +194,7 @@ table {
 
 .text-center {
     text-align: center !important;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 thead tr th {
@@ -243,7 +244,6 @@ tbody tr {
 }
 
 .small-header-time {
-    /* Add your styles for the time here */
     color: #65686f;
     font-size: 1.3rem;
 }
@@ -253,7 +253,6 @@ tbody tr {
 }
 
 .center-text {
-    /* Add your styles for the subtext here */
     color: #65686f;
     font-size: 1.6rem;
 }
@@ -261,6 +260,6 @@ tbody tr {
 .amount {
     padding: 10px;
     color: #ffffff;
-    font-size: 6rem;
+    font-size: 4rem;
 
 }
