@@ -18,7 +18,9 @@ const home_page = async (req, res) => {
 
         // process the data
 
-        const storedData = await CryptoData.find().limit(8)
+        var storedData = await CryptoData.find().sort({_id:-1}).limit(10)
+        
+        storedData.reverse()
 
         const processedData = []
 
