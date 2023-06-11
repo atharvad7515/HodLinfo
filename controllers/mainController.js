@@ -1,5 +1,7 @@
 const axios = require("axios")
 const CryptoData = require('../models/cryptoDataSchema')
+const moment = require('moment')
+require('moment-timezone')
 
 const home_page = async (req, res) => {
     try {
@@ -27,8 +29,9 @@ const home_page = async (req, res) => {
         storedData.forEach((data) => {
             var { base_unit, name, buy, sell, volume, open, low, high, last } = data;
 
-            const timestamp = new Date(data.at * 1000)
-            const tradeTime = timestamp.toLocaleString()
+            const timestamp = moment.utc(data.at * 1000)
+            const tradeTime = timestamp.tz('Asia/Kolkata').format('DD/MM/YYYY [at] h:mm A')
+
             base_unit = base_unit.toUpperCase()
             // Create an object containing the processed data for each base unit
             const processedDoc = {
