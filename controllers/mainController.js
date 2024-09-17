@@ -20,8 +20,8 @@ const home_page = async (req, res) => {
 
         // process the data
 
-        var storedData = await CryptoData.find().sort({_id:-1}).limit(10)
-        
+        var storedData = await CryptoData.find().sort({ _id: -1 }).limit(10)
+
         storedData.reverse()
 
         const processedData = []
@@ -50,14 +50,14 @@ const home_page = async (req, res) => {
             processedData.push(processedDoc)
         })
 
-            CryptoData.deleteMany({})
+        CryptoData.deleteMany({})
 
-            // send the first data
-            res.render('index',{data:processedData})
-        } catch (err) {
-            console.log(err.message)
-            res.status(500).send('Internal error fetching and storing data')
-        }
+        // send the first data
+        res.render('index', { data: processedData })
+    } catch (err) {
+        console.log(err.message)
+        res.status(500).send('Internal error fetching and storing data')
     }
+}
 
 module.exports = { home_page }

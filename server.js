@@ -16,7 +16,7 @@ app.use(express.urlencoded({
 // view engine
 app.set('view engine', 'ejs')
 
-const dbURI = "mongodb+srv://hodlinfoCryptoDB:1M5VaaZ8PBldSDON@blog.dm0zbcz.mongodb.net/hodlinfo_crypto_db?retryWrites=true&w=majority"
+const dbURI = "mongodb+srv://atharvad7515:atharva123@quadb.ahpzo.mongodb.net/?retryWrites=true&w=majority&appName=Quadb"
 const PORT = process.env.PORT || 8888
 
 mongoose.connect(dbURI)
@@ -29,8 +29,8 @@ mongoose.connect(dbURI)
     console.log(err)
   })
 
-app.use('',Route)
+app.use('', Route)
 
 app.use((req, res) => {
-    res.status(404).send("404 not found")
-  })
+  res.status(404).send("404 not found")
+})
